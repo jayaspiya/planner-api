@@ -1,5 +1,5 @@
 @request = http://localhost:5500
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTIwOTdjYTY3YjgwMDQyYzdkZjc1Y2MiLCJpYXQiOjE2Mjk1MzY4MjZ9.U7Fi2HuvhqarxAVhB6pTqXhZiZuR_CU2NJvnDJQp_tQ
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTIxM2ZlOWNmOWM5NjZjMTUzZDU1MmYiLCJpYXQiOjE2Mjk1NjkwMDR9.FxmEA4YW7IngHmjcc0rrXH4MEJS7IB4PfYG-AVg5dOs
 
 ### Test
 GET {{request}}
@@ -29,4 +29,19 @@ Content-Type: application/json
 
 ### User Profile
 GET {{request}}/user
+Authorization: Bearer {{token}}
+
+### Add Todo
+POST {{request}}/todo
+Authorization: Bearer {{token}}
+
+{
+    "title":"Complete API", 
+    "description": "Complete planner api", 
+    "schedule": "2023/01/22", 
+    "priority": "high"
+}
+
+### Get Plans
+GET {{request}}/todo
 Authorization: Bearer {{token}}

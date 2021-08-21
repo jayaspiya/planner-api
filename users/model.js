@@ -30,34 +30,7 @@ const userSchema = mongoose.Schema({
     gender:{
         type: String,
         enum: ['male', 'female', 'other'],
-    },
-    plans:[
-        {
-            created:{
-                type: Date,
-                default: Date.now,
-            },
-            title:{
-                type: String,
-                required: true
-            },
-            description:{
-                type: String,
-            },
-            schedule:{
-                type: Date,
-                required: true
-            },
-            isCompleted:{
-                type: Boolean,
-                default: false,
-            },
-            priority:{
-                type: String,
-                enum: ['low', 'medium', 'high']
-            }
-        }
-    ]
+    }
 })
 
 module.exports = mongoose.model("User", userSchema)

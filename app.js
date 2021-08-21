@@ -3,7 +3,8 @@ require("dotenv").config()
 const cors = require("cors")
 const connection = require("./utils/connection.js")
 const logger = require("./utils/logger.js")
-const userRoutes = require("./users/routes")
+const userRoutes = require("./users/routes.js")
+const todoRoutes = require("./todos/routes.js")
 
 const app = express()
 const port = process.env.PORT || 8080
@@ -25,6 +26,7 @@ app.get("/", (req,res)=>{
 
 // Route
 app.use("/user", userRoutes)
+app.use("/todo", todoRoutes)
 
 connection().then(()=>{
     app.listen(port,()=>{

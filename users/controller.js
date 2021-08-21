@@ -70,11 +70,3 @@ exports.get_profile = async function(req,res){
     })
     res.end()
 }
-
-exports.add_new_task = async function(req,res){
-    res.json({
-        message: "New Task Added",
-        success: true
-    })
-    res.end()
-}
