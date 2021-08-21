@@ -18,4 +18,10 @@ Content-Type: application/json
 }
 
 ### Login
-POST {{request}}/user/login
+GET {{request}}/user/login
+Content-Type: application/json
+
+{
+    "email": "user1@planner.com",
+    "password": "123456"
+}

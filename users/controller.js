@@ -32,3 +32,32 @@ exports.register_new_user = async function(req,res){
     }
     res.end()
 }
+
+exports.login_user = async function(req,res){
+    const {email,password} = req.body
+    const user = await User.findOne({email})
+    if(user){
+        const validLogin = await bcrypt.compare(password, user.password)
+        if(validLogin){
+            const accessToken = jwt.sign({_id: user._id}, key)
+            res.json({
+                accessToken,
+                success: true, 
+                message:"Login Successful"
+            })
+        }
+        else{
+            res.json({
+                message: "Invalid Credential",
+                success: false
+            }) 
+        }
+    }
+    else{
+        res.json({
+            message: "Invalid Credential",
+            success: false
+        })
+    }
+    res.end()
+}
