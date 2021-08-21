@@ -1,0 +1,21 @@
+@request = http://localhost:5500
+@token = 11aa
+
+### Check
+GET {{request}}
+
+### Register user
+POST {{request}}/user/register
+Content-Type: application/json
+
+{
+    "email": "user@planner.com",
+    "password": "123456",
+    "firstname": "user",
+    "lastname": "planner",
+    "address": "Schaden Junction",
+    "gender": "male"
+}
+
+### Login
+POST {{request}}/user/login
