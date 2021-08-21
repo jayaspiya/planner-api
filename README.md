@@ -1,0 +1,7 @@
+# Planner API
+
+```python
+PORT=5500
+DB_URI=""
+TOKEN_KEY=PASSWORDPASSWORD
+```
