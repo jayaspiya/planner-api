@@ -1,7 +1,7 @@
 @request = http://localhost:5500
-@token = 11aa
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTIwOTdjYTY3YjgwMDQyYzdkZjc1Y2MiLCJpYXQiOjE2Mjk1MzY4MjZ9.U7Fi2HuvhqarxAVhB6pTqXhZiZuR_CU2NJvnDJQp_tQ
 
-### Check
+### Test
 GET {{request}}
 
 ### Register user
@@ -25,3 +25,8 @@ Content-Type: application/json
     "email": "user1@planner.com",
     "password": "123456"
 }
+
+
+### User Profile
+GET {{request}}/user
+Authorization: Bearer {{token}}

@@ -48,8 +48,8 @@ exports.login_user = async function(req,res){
         }
         else{
             res.json({
-                message: "Invalid Credential",
-                success: false
+                success: false,
+                message: "Invalid Credential"
             }) 
         }
     }
@@ -59,5 +59,22 @@ exports.login_user = async function(req,res){
             success: false
         })
     }
+    res.end()
+}
+
+exports.get_profile = async function(req,res){
+    res.json({
+        message: "User Profile",
+        success: true,
+        data: req.user
+    })
+    res.end()
+}
+
+exports.add_new_task = async function(req,res){
+    res.json({
+        message: "New Task Added",
+        success: true
+    })
     res.end()
 }
