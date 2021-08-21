@@ -37,14 +37,21 @@ const userSchema = mongoose.Schema({
                 type: Date,
                 default: Date.now,
             },
-            task:{
+            title:{
                 type: String,
                 required: true
+            },
+            description:{
+                type: String,
             },
             schedule:{
                 type: Date,
                 required: true
-            }
+            },
+            isCompleted:{
+                type: Boolean,
+                default: false,
+            },
         }
     ]
 })

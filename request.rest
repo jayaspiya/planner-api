@@ -9,7 +9,7 @@ POST {{request}}/user/register
 Content-Type: application/json
 
 {
-    "email": "user@planner.com",
+    "email": "user1@planner.com",
     "password": "123456",
     "firstname": "user",
     "lastname": "planner",
