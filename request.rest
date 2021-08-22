@@ -1,5 +1,5 @@
 @request = http://localhost:5500
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTIxYWJmNDkzNzE4NDE0ODRlOGQzNTMiLCJpYXQiOjE2Mjk1OTY2NjN9.nRfnPhBK5mvGrtNUIdScKr_JkMpcLpm42Mz6YaXTLhE
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTIxYjQ0N2Y1OGIzZTI5ODIyZmViNWUiLCJpYXQiOjE2Mjk1OTg3OTl9.L4b1Wu4KNlinLaRElOsbir7DPzGHMCXSyucMbwdIhaM
 
 ### Test
 GET {{request}}
@@ -29,20 +29,36 @@ Content-Type: application/json
 
 ### User Profile
 GET {{request}}/user
-Authorization: Bearer {{token}}
+Authorization: {{token}}
 
 ### Add Todo
 POST {{request}}/todo
 Content-Type: application/json
-Authorization: Bearer {{token}}
+Authorization: {{token}}
 
 {
-    "title":"Complete API", 
-    "description": "Complete planner api", 
-    "schedule": "2023/01/22", 
+    "title":"Complete Assignment", 
+    "description": "Complete planner android application with api", 
+    "schedule": "2023/02/25", 
     "priority": "high"
 }
 
-### Get Plans
+### Get todos
 GET {{request}}/todo
-Authorization: Bearer {{token}}
+Authorization: {{token}}
+
+### Toggle complete
+PUT {{request}}/todo/toggle/6121b479f58b3e29822feb64
+Authorization: {{token}}
+
+### Edit Todo
+PUT {{request}}/todo/edit/6121b479f58b3e29822feb64
+Content-Type: application/json
+Authorization: {{token}}
+
+{
+    "title":"Complete Android", 
+    "description": "Complete planner android application", 
+    "schedule": "2023/01/25", 
+    "priority": "low"
+}

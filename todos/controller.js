@@ -25,3 +25,47 @@ exports.get_todos = async function(req,res){
     })
     res.end()
 }
+
+exports.toggle_complete = async function(req,res){
+    const _id = req.params.todoId
+    const todo = await Todo.findById(_id)
+    if(todo.user.equals(req.user._id)){
+        todo.isCompleted = !todo.isCompleted
+        await todo.save()
+        res.json({
+            message: "Toggle",
+            success: true
+        })
+    }
+    else{
+        res.json({
+            message: "Authorization Failed",
+            success: false
+        }) 
+    }
+    res.end()
+}
+
+exports.edit_todo = async function(req,res){
+    const _id = req.params.todoId
+    const todo = await Todo.findById(_id)
+    if(todo.user.equals(req.user._id)){
+        const {priority, title, description, schedule} = req.body
+        todo.priority = priority
+        todo.title = title
+        todo.description = description
+        todo.schedule = schedule
+        await todo.save()
+        res.json({
+            message: "Edit Successful",
+            success: true
+        })
+    }
+    else{
+        res.json({
+            message: "Authorization Failed",
+            success: false
+        }) 
+    }
+    res.end()
+}
