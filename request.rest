@@ -1,5 +1,5 @@
 @request = http://localhost:5500
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTIxM2ZlOWNmOWM5NjZjMTUzZDU1MmYiLCJpYXQiOjE2Mjk1NjkwMDR9.FxmEA4YW7IngHmjcc0rrXH4MEJS7IB4PfYG-AVg5dOs
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTIxYWJmNDkzNzE4NDE0ODRlOGQzNTMiLCJpYXQiOjE2Mjk1OTY2NjN9.nRfnPhBK5mvGrtNUIdScKr_JkMpcLpm42Mz6YaXTLhE
 
 ### Test
 GET {{request}}
@@ -33,6 +33,7 @@ Authorization: Bearer {{token}}
 
 ### Add Todo
 POST {{request}}/todo
+Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {

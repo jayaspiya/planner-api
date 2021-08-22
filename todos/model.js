@@ -29,4 +29,4 @@ const todoSchema = mongoose.Schema({
             default: Date.now,
         },
 })
-module.expors = mongoose.model("Todo", todoSchema)
+module.exports = mongoose.model("Todo", todoSchema)
