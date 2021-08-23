@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ### Login
-GET {{request}}/user/login
+POST {{request}}/user/login
 Content-Type: application/json
 
 {
